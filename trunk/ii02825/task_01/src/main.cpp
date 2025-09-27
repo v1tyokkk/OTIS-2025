@@ -9,7 +9,7 @@ int main()
     cin >> u >> y;
 
     double a, b, c, d;
-    cout << "Enter a,b,c,d(some constans): " << endl;
+    cout << "Enter a,b,c,d(some constants): " << endl;
     cin >> a >> b >> c >> d;
 
     int count;
