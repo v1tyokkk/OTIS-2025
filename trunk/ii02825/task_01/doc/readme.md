@@ -99,3 +99,7 @@ Result of the 7 step of non-linear model: 3.60715;
 Result of the 8 step of linear model: 15.7231;
 Result of the 8 step of non-linear model: 0.495128;
 ```
+## Рецензирование запросов других студентов ##
+![Рецензия работы пользователя JohnyDepp228:](https://ibb.co/C5qn0wCt)
+
+![Рецензия работы пользователя humoristoff :](https://ibb.co/1tzGXp7h)
