@@ -78,7 +78,7 @@ int main()
 ```
 Enter u(input warm) and y(input temperature): 
 2 2
-Enter a,b,c,d(some constans): 
+Enter a,b,c,d(some constants): 
 1.1 0.5 0.88 1.4
 Enter the number of steps: 
 8
