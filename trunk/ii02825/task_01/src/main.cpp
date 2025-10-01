@@ -3,11 +3,15 @@
 
 int main()
 {
-    double u, y;
+    double u;
+    double y;
     std::cout << "Enter u(input warm) and y(input temperature): " << std::endl;
     std::cin >> u >> y;
 
-    double a, b, c, d;
+    double a;
+    double b; 
+    double c;
+    double d;
     std::cout << "Enter a,b,c,d(some constants): " << std::endl;
     std::cin >> a >> b >> c >> d;
 
@@ -15,7 +19,8 @@ int main()
     std::cout << "Enter the number of steps: " << std::endl;
     std::cin >> count;
 
-    double yl = y, ynl = y;
+    double yl = y;
+    double ynl = y;
     for (int i = 0; i < count; i++)
     {
         yl = a * yl + b * u;
