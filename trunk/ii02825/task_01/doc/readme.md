@@ -46,6 +46,9 @@ Task is to write program (**С++**), which simulates this object temperature.
 #include <iostream>
 #include <cmath>
 
+double linear(double y, double u, double a, double b);
+double non_linear(double y, double u, double a, double b, double c, double d);
+
 int main()
 {
     double u;
@@ -68,14 +71,24 @@ int main()
     double ynl = y;
     for (int i = 0; i < count; i++)
     {
-        yl = a * yl + b * u;
-        ynl = a * ynl - b * ynl * ynl + c * u + d * std::sin(u);
+        yl = linear(y, u, a, b);
+        ynl = non_linear(y, u, a, b, c, d);
 
         std::cout << "Result of the " << i + 1 << " step of linear model: " << yl << ";\n";
         std::cout << "Result of the " << i + 1 << " step of non-linear model: " << ynl << ";\n";
     }
 
     return 0;
+}
+
+double linear(double y, double u, double a, double b)
+{
+    return a * y + b * u;
+}
+
+double non_linear(double y, double u, double a, double b, double c, double d)
+{
+    return a * y - b * y * y + c * u + d * std::sin(u);
 }
 ```
 Вывод программы:
