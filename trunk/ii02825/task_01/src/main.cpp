@@ -26,8 +26,8 @@ int main()
     double ynl = y;
     for (int i = 0; i < count; i++)
     {
-        yl = linear(y, u, a, b);
-        ynl = non_linear(y, u, a, b, c, d);
+        yl = linear(yl, u, a, b);
+        ynl = non_linear(ynl, u, a, b, c, d);
 
         std::cout << "Result of the " << i + 1 << " step of linear model: " << yl << ";\n";
         std::cout << "Result of the " << i + 1 << " step of non-linear model: " << ynl << ";\n";
