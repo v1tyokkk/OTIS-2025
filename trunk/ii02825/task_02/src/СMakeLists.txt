@@ -1,5 +1,0 @@
-cmake_minimum_required(VERSION 3.10)
-project(task_02_src)
-
-add_library(model functions.cpp)
-target_include_directories(model PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
