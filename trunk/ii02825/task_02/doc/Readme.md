@@ -68,38 +68,9 @@ TEST(NonlinearModelTest, WithValues) {
 
 ```
 ## Результаты юнит-тестирования (GoogleTest)
-[==========] Running 4 tests from 2 test suites.
-[----------] Global test environment set-up.
-[----------] 2 tests from LinearModelTest
-[ RUN      ] LinearModelTest.BaseCase
-[       OK ] LinearModelTest.BaseCase (0 ms)
-[ RUN      ] LinearModelTest.WithNonZeroY
-[       OK ] LinearModelTest.WithNonZeroY (0 ms)
-[----------] 2 tests from LinearModelTest (0 ms total)
 
-[----------] 2 tests from NonlinearModelTest
-[ RUN      ] NonlinearModelTest.BaseCase
-[       OK ] NonlinearModelTest.BaseCase (0 ms)
-[ RUN      ] NonlinearModelTest.WithValues
-[       OK ] NonlinearModelTest.WithValues (0 ms)
-[----------] 2 tests from NonlinearModelTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 4 tests from 2 test suites ran. (0 ms total)
-[  PASSED  ] 4 tests.
+![Результаты тестов](../src/images/tests.png)
 
 ## Покрытие тестами (gcovr)
 
-------------------------------------------------------------------------------
-                           GCC Code Coverage Report
-Directory: .
-------------------------------------------------------------------------------
-File                                       Lines    Exec  Cover   Missing
-------------------------------------------------------------------------------
-src/functions.cpp                              4       4   100%
-src/main_program.cpp                          16       0     0%   4,6-7,10-11,14-15,17-18,20-22,24-26,28
-test/test.cpp                                 16      16   100%
-------------------------------------------------------------------------------
-TOTAL                                         36      20    55%
-------------------------------------------------------------------------------
-
+![Покрытие кода](../src/images/coverage.png)

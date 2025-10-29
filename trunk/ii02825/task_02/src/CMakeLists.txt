@@ -11,11 +11,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 # Основные файлы программы
 set(SRC_FILES
     ${CMAKE_CURRENT_SOURCE_DIR}/functions.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/main_program.cpp
 )
-
-# ---- Основная программа ----
-add_executable(task_02_program ${SRC_FILES})
 
 # ---- Подключение GoogleTest ----
 # Пути для macOS (Homebrew)
