@@ -32,9 +32,6 @@
 # Код юнит-тестов [ test/test.cpp ]
 
 ```cpp
-#include <gtest/gtest.h>
-#include <cmath>
-#include "functions.h"
 
 #include <gtest/gtest.h>
 #include <cmath>
