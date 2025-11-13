@@ -155,12 +155,12 @@ int main() {
 ```
 
 ## Результат программы [ src/main.cpp ]
-![results](images/results.png)
+![result](images/result.png)
 
 ## График
 ### При `K = 0.4 T = 3.0 T0 = 1.0 TD = 0.1 a = 0.8 b = 0.2 y0 = 10 w = 20`
-<br>
-![g1](images/g1.png)
+
+![g1](images/g.png)
 <br>
 
 
