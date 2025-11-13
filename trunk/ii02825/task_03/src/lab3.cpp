@@ -24,8 +24,8 @@ int main() {
     cout << "Enter number of simulation steps: ";
     cin >> steps;
 
-    double K  = 1.2;
-    double T  = 1.0;
+    double K  = 0.4;
+    double T  = 3.0;
     double Td = 0.1;
     double T0 = 1.0;
 
