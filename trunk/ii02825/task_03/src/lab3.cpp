@@ -8,7 +8,9 @@ using namespace std;
  * @brief Основная программа моделирования ПИД-регулятора.
  */
 int main() {
-    double y0, a, b;
+    double y0;
+    double a;
+    double b;
 
     cout << "Enter initial temperature y: ";
     cin >> y0;

@@ -1,11 +1,11 @@
+// pid.cpp
 #include "pid.h"
 
 /**
  * @brief Конструктор PID-регулятора.
  */
 PID::PID(double K_, double T_, double Td_, double T0_)
-    : K(K_), T(T_), Td(Td_), T0(T0_),
-      u_prev(0.0), e_prev1(0.0), e_prev2(0.0)
+    : K(K_), T(T_), Td(Td_), T0(T0_)
 {
     q0 = K * (1.0 + Td / T0);
     q1 = -K * (1.0 + 2.0 * Td / T0 - T0 / T);
@@ -28,3 +28,4 @@ double PID::compute(double e)
 
     return u;
 }
+
