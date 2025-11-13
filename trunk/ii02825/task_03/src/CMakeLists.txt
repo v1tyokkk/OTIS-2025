@@ -1,29 +1,41 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.15)
 project(task_03_ii02825)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# Пути к исходникам
+set(SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR})
 set(SRC_FILES
-    lab3.cpp
-    pid.cpp
-    model.cpp
+    ${SRC_DIR}/lab3.cpp
+    ${SRC_DIR}/pid.cpp
+    ${SRC_DIR}/model.cpp
 )
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR})
-
+# Основная программа
 add_executable(lab3 ${SRC_FILES})
+include_directories(${SRC_DIR})
+
+# ----------------------------
+# GoogleTest через FetchContent
+# ----------------------------
+include(FetchContent)
+FetchContent_Declare(
+  googletest
+  GIT_REPOSITORY https://github.com/google/googletest.git
+  GIT_TAG release-1.15.0
+)
+FetchContent_MakeAvailable(googletest)
 
 enable_testing()
 
-find_package(GTest REQUIRED)
-
+# Тестовый бинарник
 add_executable(testlab3_runner
-    ../test/testlab3.cpp
-    pid.cpp
-    model.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/../test/testlab3.cpp
+    ${SRC_DIR}/pid.cpp
+    ${SRC_DIR}/model.cpp
 )
 
-target_link_libraries(testlab3_runner GTest::gtest_main pthread)
-
-add_test(NAME PIDTests COMMAND testlab3_runner)
+target_link_libraries(testlab3_runner gtest_main pthread)
+include(GoogleTest)
+gtest_discover_tests(testlab3_runner)
