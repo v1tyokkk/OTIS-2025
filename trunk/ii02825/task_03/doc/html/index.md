@@ -1,73 +1,27 @@
-# API Reference
+---
+title: Classes
 
-## Header files
+---
 
-- [src/model.h](#file-srcmodelh)
-- [src/pid.h](#file-srcpidh)
-
-## File src/model.h
-
-_Линейная модель объекта_
+# Classes
 
 
 
 
-## Functions
-
-| Type | Name |
-| ---: | :--- |
-|  double | [**linear**](#function-linear) (double y, double u, double a, double b) <br>_Линейная модель объекта._ |
+* **class [PID](Classes/class_p_i_d.md)** <br>Класс дискретного ПИД-регулятора. 
+* **namespace [std](Namespaces/namespacestd.md)** 
 
 
 
-## Functions Documentation
+-------------------------------
 
-### function `linear`
+Updated on 2025-11-21 at 11:50:33 +0300
+---
+title: Examples
 
-_Линейная модель объекта._
-```c
-double linear (
-    double y,
-    double u,
-    double a,
-    double b
-) 
-```
+---
 
-
-**Parameters:**
-
-
-* `y` Текущая температура 
-* `u` Управляющее воздействие 
-* `a` Коэффициент влияния температуры 
-* `b` Коэффициент влияния управления 
-
-
-**Returns:**
-
-Новое значение температуры
-
-
-Функция рассчитывает новое состояние системы на основе текущего значения ( y ) и управляющего воздействия ( u ).
-
-
-
-**Parameters:**
-
-
-* `y` Текущее значение состояния объекта. 
-* `u` Управляющее воздействие. 
-* `a` Коэффициент влияния предыдущего состояния. 
-* `b` Коэффициент влияния управляющего воздействия.
-
-
-**Returns:**
-
-Новое значение параметра объекта.
-
-
-## File src/pid.h
+# Examples
 
 
 
@@ -75,7 +29,77 @@ double linear (
 
 
 
+-------------------------------
+
+Updated on 2025-11-21 at 11:50:33 +0300
+---
+title: Files
+
+---
+
+# Files
 
 
 
 
+* **dir [src](Files/dir_68267d1309a1af8e8297ef4c3efbcdba.md#dir-src)** 
+    * **file [cpp](Files/lab3_8cpp.md#file-lab3.cpp)** 
+    * **file [cpp](Files/model_8cpp.md#file-model.cpp)** <br>Реализация линейной динамической модели объекта управления. 
+    * **file [h](Files/model_8h.md#file-model.h)** <br>Линейная модель объекта 
+    * **file [cpp](Files/pid_8cpp.md#file-pid.cpp)** <br>Реализация методов PID-регулятора. 
+    * **file [h](Files/pid_8h.md#file-pid.h)** 
+
+
+
+-------------------------------
+
+Updated on 2025-11-21 at 11:50:33 +0300
+---
+title: Modules
+
+---
+
+# Modules
+
+
+
+
+
+
+
+-------------------------------
+
+Updated on 2025-11-21 at 11:50:33 +0300
+---
+title: Namespaces
+
+---
+
+# Namespaces
+
+
+
+
+* **namespace [std](Namespaces/namespacestd.md)** 
+
+
+
+-------------------------------
+
+Updated on 2025-11-21 at 11:50:33 +0300
+---
+title: Pages
+
+---
+
+# Pages
+
+
+
+
+
+
+
+-------------------------------
+
+Updated on 2025-11-21 at 11:50:33 +0300
