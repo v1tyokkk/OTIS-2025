@@ -44,4 +44,19 @@ double linear (\begin{DoxyParamCaption}\item[{double}]{y}{, }\item[{double}]{u}{
 \begin{DoxyReturn}{Returns}
 Новое значение температуры
 \end{DoxyReturn}
-Линейная модель объекта. 
+Функция рассчитывает новое состояние системы на основе текущего значения ( y ) и управляющего воздействия ( u ).
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & Текущее значение состояния объекта. \\
+\hline
+{\em u} & Управляющее воздействие. \\
+\hline
+{\em a} & Коэффициент влияния предыдущего состояния. \\
+\hline
+{\em b} & Коэффициент влияния управляющего воздействия.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Новое значение параметра объекта. 
+\end{DoxyReturn}

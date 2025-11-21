@@ -1,12 +1,31 @@
 \doxysection{src/model.cpp File Reference}
 \hypertarget{model_8cpp}{}\label{model_8cpp}\index{src/model.cpp@{src/model.cpp}}
+
+
+Реализация линейной динамической модели объекта управления.  
+
+
 {\ttfamily \#include "{}model.\+h"{}}\newline
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 double \mbox{\hyperlink{model_8cpp_a82cf4dbd2f60c32e470774b41c7f7ad7}{linear}} (double y, double u, double a, double b)
-\begin{DoxyCompactList}\small\item\em Линейная модель объекта \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Линейная модель объекта. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Реализация линейной динамической модели объекта управления. 
+
+Линейная модель описывает поведение объекта по разностному уравнению\+:   \[    y(k+1) = a \cdot y(k) + b \cdot u(k)
+\]
+
+где\+:
+\begin{DoxyItemize}
+\item ( y(k) ) — текущее состояние объекта,
+\item ( u(k) ) — управляющее воздействие,
+\item ( a ) — коэффициент сохранения предыдущего состояния,
+\item ( b ) — коэффициент влияния управляющего сигнала. 
+\end{DoxyItemize}
 
 \label{doc-func-members}
 \Hypertarget{model_8cpp_doc-func-members}
@@ -19,6 +38,21 @@ double linear (\begin{DoxyParamCaption}\item[{double}]{y}{, }\item[{double}]{u}{
 
 
 
-Линейная модель объекта 
-
 Линейная модель объекта. 
+
+Функция рассчитывает новое состояние системы на основе текущего значения ( y ) и управляющего воздействия ( u ).
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & Текущее значение состояния объекта. \\
+\hline
+{\em u} & Управляющее воздействие. \\
+\hline
+{\em a} & Коэффициент влияния предыдущего состояния. \\
+\hline
+{\em b} & Коэффициент влияния управляющего воздействия.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Новое значение параметра объекта. 
+\end{DoxyReturn}

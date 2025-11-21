@@ -4,7 +4,6 @@
     <compoundname>model.h</compoundname>
     <includedby refid="lab3_8cpp" local="yes">src/lab3.cpp</includedby>
     <includedby refid="model_8cpp" local="yes">src/model.cpp</includedby>
-    <includedby refid="testlab3_8cpp" local="yes">test/testlab3.cpp</includedby>
     <invincdepgraph>
       <node id="2">
         <label>src/lab3.cpp</label>
@@ -21,12 +20,6 @@
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-      </node>
-      <node id="4">
-        <label>test/testlab3.cpp</label>
-        <link refid="testlab3_8cpp"/>
       </node>
     </invincdepgraph>
     <sectiondef kind="func">
@@ -90,11 +83,47 @@
 </parameterlist>
 <simplesect kind="return"><para>Новое значение температуры</para>
 </simplesect>
-Линейная модель объекта. </para>
+Функция рассчитывает новое состояние системы на основе текущего значения ( y ) и управляющего воздействия ( u ).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Текущее значение состояния объекта. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>u</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Управляющее воздействие. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Коэффициент влияния предыдущего состояния. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Коэффициент влияния управляющего воздействия.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Новое значение параметра объекта. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/model.h" line="17" column="8" bodyfile="src/model.cpp" bodystart="6" bodyend="9" declfile="src/model.h" declline="17" declcolumn="8"/>
+        <location file="src/model.h" line="17" column="8" bodyfile="src/model.cpp" bodystart="32" bodyend="35" declfile="src/model.h" declline="17" declcolumn="8"/>
       </memberdef>
     </sectiondef>
     <briefdescription>

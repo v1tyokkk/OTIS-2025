@@ -15,11 +15,13 @@
 \mbox{\hyperlink{class_p_i_d_a471901c24b68822018613f9e412a3d29}{PID}} (double K\+\_\+, double T\+\_\+, double Td\+\_\+, double T0\+\_\+)
 \begin{DoxyCompactList}\small\item\em Конструктор PID-\/регулятора. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_p_i_d_a980f21e5c28912b5c968e60c8ddfa089}{compute}} (double e)
-\begin{DoxyCompactList}\small\item\em Вычислить новое управляющее воздействие. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Вычисляет новое управляющее воздействие. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Класс дискретного ПИД-\/регулятора. 
+
+Реализует дискретный \doxylink{class_p_i_d}{PID} с использованием разностного уравнения. 
 
 \label{doc-constructors}
 \Hypertarget{class_p_i_d_doc-constructors}
@@ -58,9 +60,7 @@ double PID\+::compute (\begin{DoxyParamCaption}\item[{double}]{e}{}\end{DoxyPara
 
 
 
-Вычислить новое управляющее воздействие. 
-
-Вычисление нового управляющего воздействия.
+Вычисляет новое управляющее воздействие. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -68,7 +68,7 @@ double PID\+::compute (\begin{DoxyParamCaption}\item[{double}]{e}{}\end{DoxyPara
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Вычисленное управляющее воздействие 
+Управляющее воздействие 
 \end{DoxyReturn}
 
 

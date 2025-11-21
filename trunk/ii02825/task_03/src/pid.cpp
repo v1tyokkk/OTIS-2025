@@ -1,9 +1,10 @@
-// pid.cpp
+/**
+ * @file pid.cpp
+ * @brief Реализация методов PID-регулятора.
+ */
+
 #include "pid.h"
 
-/**
- * @brief Конструктор PID-регулятора.
- */
 PID::PID(double K_, double T_, double Td_, double T0_)
     : K(K_), T(T_), Td(Td_), T0(T0_)
 {
@@ -12,11 +13,6 @@ PID::PID(double K_, double T_, double Td_, double T0_)
     q2 = K * (Td / T0);
 }
 
-/**
- * @brief Вычисление нового управляющего воздействия.
- * @param e Текущая ошибка
- * @return Вычисленное управляющее воздействие
- */
 double PID::compute(double e)
 {
     double du = q0 * e + q1 * e_prev1 + q2 * e_prev2;
@@ -28,4 +24,5 @@ double PID::compute(double e)
 
     return u;
 }
+
 

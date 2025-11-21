@@ -7,7 +7,7 @@
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{lab3_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
-\begin{DoxyCompactList}\small\item\em Основная программа моделирования ПИД-\/регулятора. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Основная функция моделирования PID-\/регулятора. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \label{doc-func-members}
@@ -21,5 +21,46 @@ int main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
-Основная программа моделирования ПИД-\/регулятора. 
+Основная функция моделирования PID-\/регулятора. 
 
+Функция выполняет последовательность шагов\+:
+\begin{DoxyEnumerate}
+\item Считывание входных параметров пользователя.
+\item Инициализация PID-\/регулятора.
+\item Запуск цикла моделирования.
+\item Вычисление ошибки e = w -\/ y.
+\item Получение управляющего воздействия u.
+\item Обновление состояния объекта через линейную модель.
+\item Вывод промежуточных результатов.
+\end{DoxyEnumerate}
+
+\begin{DoxyReturn}{Returns}
+Код завершения программы (0 — успешное выполнение). 
+\end{DoxyReturn}
+\texorpdfstring{$<$}{<} Начальная температура объекта
+
+\texorpdfstring{$<$}{<} Коэффициент модели — сохранение предыдущего состояния
+
+\texorpdfstring{$<$}{<} Коэффициент модели — влияние управляющего воздействия
+
+\texorpdfstring{$<$}{<} Целевая температура
+
+\texorpdfstring{$<$}{<} Количество шагов моделирования
+
+\texorpdfstring{$<$}{<} Усиление
+
+\texorpdfstring{$<$}{<} Время интегрирования
+
+\texorpdfstring{$<$}{<} Время дифференцирования
+
+\texorpdfstring{$<$}{<} Шаг дискретизации
+
+\texorpdfstring{$<$}{<} Экземпляр PID-\/регулятора
+
+\texorpdfstring{$<$}{<} Текущее состояние объекта
+
+\texorpdfstring{$<$}{<} Ошибка управления
+
+\texorpdfstring{$<$}{<} Управляющее воздействие
+
+\texorpdfstring{$<$}{<} Обновлённое состояние объекта
