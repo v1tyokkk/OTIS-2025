@@ -37,14 +37,14 @@ using namespace std;
  */
 int main() {
     double y0;  /**< Начальная температура объекта */
-    double a;   /**< Коэффициент модели — сохранение предыдущего состояния */
-    double b;   /**< Коэффициент модели — влияние управляющего воздействия */
+    double a1;   /**< Коэффициент модели — сохранение предыдущего состояния */
+    double b1;   /**< Коэффициент модели — влияние управляющего воздействия */
 
     cout << "Enter initial temperature y: ";
     cin >> y0;
 
     cout << "Enter a and b for linear model: ";
-    cin >> a >> b;
+    cin >> a1 >> b1;
 
     double w;  /**< Целевая температура */
     cout << "Enter target temperature w: ";
@@ -67,7 +67,7 @@ int main() {
     for (int k = 0; k < steps; k++) {
         double e = w - y;          /**< Ошибка управления */
         double u = pid.compute(e); /**< Управляющее воздействие */
-        y = linear(y, u, a, b);    /**< Обновлённое состояние объекта */
+        y = linear(y, u, a1, b1);    /**< Обновлённое состояние объекта */
 
         cout << "Step " << k
              << "  e=" << e
