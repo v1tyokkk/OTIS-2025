@@ -9,7 +9,6 @@ title: Classes
 
 
 * **class [PID](Classes/class_p_i_d.md)** <br>Класс дискретного ПИД-регулятора. 
-* **namespace [std](Namespaces/namespacestd.md)** 
 
 
 
