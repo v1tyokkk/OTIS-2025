@@ -23,7 +23,7 @@ summary: Линейная модель объекта
 double linear(
     double y,
     double u,
-    double a,
+    double a_1,
     double b
 )
 ```
@@ -62,7 +62,7 @@ double linear(
 #ifndef MODEL_H
 #define MODEL_H
 
-double linear(double y, double u, double a, double b);
+double linear(double y, double u, double a_1, double b);
 
 #endif
 ```

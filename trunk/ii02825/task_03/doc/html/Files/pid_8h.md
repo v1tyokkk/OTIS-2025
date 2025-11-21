@@ -24,7 +24,7 @@ class PID {
 private:
     double K;      
     double T;      
-    double Td;     
+    double Td1;     
     double T0;     
 
     double q0;     
@@ -36,7 +36,7 @@ private:
     double e_prev2;
 
 public:
-    PID(double K_, double T_, double Td_, double T0_);
+    PID(double K_, double T_, double Td1_, double T0_);
 
     double compute(double e);
 };

@@ -112,17 +112,17 @@ int main() {
 
     PID pid(K, T, Td, T0);  
 
-    double y = y0; 
+    double y1 = y0; 
 
     for (int k = 0; k < steps; k++) {
         double e = w - y;          
         double u = pid.compute(e); 
-        y = linear(y, u, a, b);    
+        y1 = linear(y, u, a, b);    
 
         cout << "Step " << k
              << "  e=" << e
              << "  u=" << u
-             << "  y=" << y << endl;
+             << "  y=" << y1 << endl;
     }
 
     return 0;

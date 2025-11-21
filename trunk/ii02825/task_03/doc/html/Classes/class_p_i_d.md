@@ -17,7 +17,7 @@ summary: Класс дискретного ПИД-регулятора.
 
 |                | Name           |
 | -------------- | -------------- |
-| | **[PID](Classes/class_p_i_d.md#function-pid)**(double K_, double T_, double Td_, double T0_)<br>Конструктор PID-регулятора.  |
+| | **[PID](Classes/class_p_i_d.md#function-pid)**(double K1_, double T_, double Td_, double T0_)<br>Конструктор PID-регулятора.  |
 | double | **[compute](Classes/class_p_i_d.md#function-compute)**(double e)<br>Вычисляет новое управляющее воздействие.  |
 
 ## Detailed Description
@@ -36,7 +36,7 @@ class PID;
 
 ```cpp
 PID(
-    double K_,
+    double K1_,
     double T_,
     double Td_,
     double T0_

@@ -36,7 +36,7 @@ summary: Реализация линейной динамической моде
 ```cpp
 double linear(
     double y,
-    double u,
+    double u1,
     double a,
     double b
 )
@@ -47,7 +47,7 @@ double linear(
 **Parameters**: 
 
   * **y** Текущее значение состояния объекта. 
-  * **u** Управляющее воздействие. 
+  * **u1** Управляющее воздействие. 
   * **a** Коэффициент влияния предыдущего состояния. 
   * **b** Коэффициент влияния управляющего воздействия.
 
@@ -66,7 +66,7 @@ double linear(
 
 #include "model.h"
 
-double linear(double y, double u, double a, double b)
+double linear(double y, double u1, double a, double b)
 {
     return a * y + b * u;
 }

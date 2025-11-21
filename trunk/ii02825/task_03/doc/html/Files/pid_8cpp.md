@@ -32,7 +32,7 @@ double PID::compute(double e)
     double u = u_prev + du;
 
     u_prev = u;
-    e_prev2 = e_prev1;
+    e_prev2_1 = e_prev1;
     e_prev1 = e;
 
     return u;
