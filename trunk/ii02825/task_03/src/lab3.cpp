@@ -31,7 +31,8 @@ using namespace std;
  */
 int main() {
     double y0;  /**< Начальная температура объекта */
-    double a, b; /**< Коэффициенты линейной модели */
+    double a; 
+    double b; /**< Коэффициенты линейной модели */
 
     cout << "Enter initial temperature y: ";
     cin >> y0;

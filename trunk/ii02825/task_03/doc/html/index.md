@@ -9,7 +9,6 @@ title: Classes
 
 
 * **class [PID](Classes/class_p_i_d.md)** <br>Класс дискретного ПИД-регулятора. 
-* **namespace [std](Namespaces/namespacestd.md)** 
 
 
 
@@ -54,9 +53,6 @@ title: Files
 -------------------------------
 
 Updated on 2025-11-26 at 11:50:51 +0300
----
-title: Modules
-
 ---
 
 
