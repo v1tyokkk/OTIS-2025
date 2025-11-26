@@ -9,12 +9,13 @@ title: Classes
 
 
 * **class [PID](Classes/class_p_i_d.md)** <br>Класс дискретного ПИД-регулятора. 
+* **namespace [std](Namespaces/namespacestd.md)** 
 
 
 
 -------------------------------
 
-Updated on 2025-11-21 at 11:50:33 +0300
+Updated on 2025-11-26 at 11:50:51 +0300
 ---
 title: Examples
 
@@ -30,7 +31,7 @@ title: Examples
 
 -------------------------------
 
-Updated on 2025-11-21 at 11:50:33 +0300
+Updated on 2025-11-26 at 11:50:51 +0300
 ---
 title: Files
 
@@ -43,8 +44,8 @@ title: Files
 
 * **dir [src](Files/dir_68267d1309a1af8e8297ef4c3efbcdba.md#dir-src)** 
     * **file [cpp](Files/lab3_8cpp.md#file-lab3.cpp)** 
-    * **file [cpp](Files/model_8cpp.md#file-model.cpp)** <br>Реализация линейной динамической модели объекта управления. 
-    * **file [h](Files/model_8h.md#file-model.h)** <br>Линейная модель объекта 
+    * **file [cpp](Files/model_8cpp.md#file-model.cpp)** <br>Реализация линейной и нелинейной динамической модели объекта управления. 
+    * **file [h](Files/model_8h.md#file-model.h)** <br>Заголовочный файл для математических моделей объекта управления. 
     * **file [cpp](Files/pid_8cpp.md#file-pid.cpp)** <br>Реализация методов PID-регулятора. 
     * **file [h](Files/pid_8h.md#file-pid.h)** 
 
@@ -52,53 +53,11 @@ title: Files
 
 -------------------------------
 
-Updated on 2025-11-21 at 11:50:33 +0300
+Updated on 2025-11-26 at 11:50:51 +0300
 ---
 title: Modules
 
 ---
 
-# Modules
 
 
-
-
-
-
-
--------------------------------
-
-Updated on 2025-11-21 at 11:50:33 +0300
----
-title: Namespaces
-
----
-
-# Namespaces
-
-
-
-
-* **namespace [std](Namespaces/namespacestd.md)** 
-
-
-
--------------------------------
-
-Updated on 2025-11-21 at 11:50:33 +0300
----
-title: Pages
-
----
-
-# Pages
-
-
-
-
-
-
-
--------------------------------
-
-Updated on 2025-11-21 at 11:50:33 +0300

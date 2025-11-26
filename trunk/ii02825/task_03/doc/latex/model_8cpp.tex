@@ -2,30 +2,28 @@
 \hypertarget{model_8cpp}{}\label{model_8cpp}\index{src/model.cpp@{src/model.cpp}}
 
 
-Реализация линейной динамической модели объекта управления.  
+Реализация линейной и нелинейной динамической модели объекта управления.  
 
 
 {\ttfamily \#include "{}model.\+h"{}}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 double \mbox{\hyperlink{model_8cpp_a82cf4dbd2f60c32e470774b41c7f7ad7}{linear}} (double y, double u, double a, double b)
-\begin{DoxyCompactList}\small\item\em Линейная модель объекта. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Линейная модель объекта. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{model_8cpp_a9ee3270cf2f0e5314c373a0f9a990ba6}{non\+\_\+linear}} (double y, double u, double a, double b, double c, double d)
+\begin{DoxyCompactList}\small\item\em Нелинейная модель объекта. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Реализация линейной динамической модели объекта управления. 
+Реализация линейной и нелинейной динамической модели объекта управления. 
 
+\hypertarget{model_8cpp_autotoc_md0}{}\doxysubsubsection{\texorpdfstring{Линейная модель}{Линейная модель}}\label{model_8cpp_autotoc_md0}
 Линейная модель описывает поведение объекта по разностному уравнению\+:   \[    y(k+1) = a \cdot y(k) + b \cdot u(k)
-\]
-
-где\+:
-\begin{DoxyItemize}
-\item ( y(k) ) — текущее состояние объекта,
-\item ( u(k) ) — управляющее воздействие,
-\item ( a ) — коэффициент сохранения предыдущего состояния,
-\item ( b ) — коэффициент влияния управляющего сигнала. 
-\end{DoxyItemize}
+\]\hypertarget{model_8cpp_autotoc_md1}{}\doxysubsubsection{\texorpdfstring{Нелинейная модель}{Нелинейная модель}}\label{model_8cpp_autotoc_md1}
+Нелинейная модель учитывает квадратичный член и синусоиду\+:   \[    y(k+1) = a \cdot y(k) - b \cdot y(k)^2 + c \cdot u(k) + d \cdot \sin(u(k))
+\] 
 
 \label{doc-func-members}
 \Hypertarget{model_8cpp_doc-func-members}
@@ -39,6 +37,8 @@ double linear (\begin{DoxyParamCaption}\item[{double}]{y}{, }\item[{double}]{u}{
 
 
 Линейная модель объекта. 
+
+Линейная модель динамики объекта.
 
 Функция рассчитывает новое состояние системы на основе текущего значения ( y ) и управляющего воздействия ( u ).
 
@@ -55,4 +55,47 @@ double linear (\begin{DoxyParamCaption}\item[{double}]{y}{, }\item[{double}]{u}{
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 Новое значение параметра объекта. 
+\end{DoxyReturn}
+\Hypertarget{model_8cpp_a9ee3270cf2f0e5314c373a0f9a990ba6}\index{model.cpp@{model.cpp}!non\_linear@{non\_linear}}
+\index{non\_linear@{non\_linear}!model.cpp@{model.cpp}}
+\doxysubsubsection{\texorpdfstring{non\_linear()}{non\_linear()}}
+{\footnotesize\ttfamily \label{model_8cpp_a9ee3270cf2f0e5314c373a0f9a990ba6} 
+double non\+\_\+linear (\begin{DoxyParamCaption}\item[{double}]{y}{, }\item[{double}]{u}{, }\item[{double}]{a}{, }\item[{double}]{b}{, }\item[{double}]{c}{, }\item[{double}]{d}{}\end{DoxyParamCaption})}
+
+
+
+Нелинейная модель объекта. 
+
+Нелинейная модель динамики объекта.
+
+Учитывает нелинейные эффекты насыщения и колебательность управления\+:
+
+\[y(k+1) = a \cdot y - b \cdot y^2 + c \cdot u + d \cdot \sin(u)
+\]
+
+где\+:
+\begin{DoxyItemize}
+\item ( a ) — влияние предыдущего состояния,
+\item ( b ) — коэффициент нелинейного затухания,
+\item ( c ) — коэффициент влияния управляющего воздействия,
+\item ( d ) — амплитуда синусоидального воздействия.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & Текущее состояние объекта. \\
+\hline
+{\em u} & Управляющий сигнал. \\
+\hline
+{\em a} & Коэффициент сохранения состояния. \\
+\hline
+{\em b} & Коэффициент квадратичного влияния состояния. \\
+\hline
+{\em c} & Коэффициент влияния управляющего сигнала. \\
+\hline
+{\em d} & Коэффициент синусоидального влияния.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Новое значение состояния системы. 
 \end{DoxyReturn}

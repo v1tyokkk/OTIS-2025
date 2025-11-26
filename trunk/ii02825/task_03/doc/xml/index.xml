@@ -21,9 +21,11 @@
   </compound>
   <compound refid="model_8cpp" kind="file"><name>model.cpp</name>
     <member refid="model_8cpp_1a82cf4dbd2f60c32e470774b41c7f7ad7" kind="function"><name>linear</name></member>
+    <member refid="model_8cpp_1a9ee3270cf2f0e5314c373a0f9a990ba6" kind="function"><name>non_linear</name></member>
   </compound>
   <compound refid="model_8h" kind="file"><name>model.h</name>
     <member refid="model_8h_1a82cf4dbd2f60c32e470774b41c7f7ad7" kind="function"><name>linear</name></member>
+    <member refid="model_8h_1a9ee3270cf2f0e5314c373a0f9a990ba6" kind="function"><name>non_linear</name></member>
   </compound>
   <compound refid="pid_8cpp" kind="file"><name>pid.cpp</name>
   </compound>

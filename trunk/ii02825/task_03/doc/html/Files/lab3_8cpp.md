@@ -17,7 +17,7 @@ title: src/lab3.cpp
 
 |                | Name           |
 | -------------- | -------------- |
-| int | **[main](Files/lab3_8cpp.md#function-main)**()<br>Основная функция моделирования PID-регулятора.  |
+| int | **[main](Files/lab3_8cpp.md#function-main)**()<br>Точка входа в программу.  |
 
 
 ## Functions Documentation
@@ -28,48 +28,38 @@ title: src/lab3.cpp
 int main()
 ```
 
-Основная функция моделирования PID-регулятора. 
+Точка входа в программу. 
 
-**Return**: Код завершения программы (0 — успешное выполнение). 
+**Return**: 0 — успешное завершение 
 
-Функция выполняет последовательность шагов:
+Программа моделирует работу PID-регулятора для двух моделей объекта:
 
-1. Считывание входных параметров пользователя.
-2. Инициализация PID-регулятора.
-3. Запуск цикла моделирования.
-4. Вычисление ошибки e = w - y.
-5. Получение управляющего воздействия u.
-6. Обновление состояния объекта через линейную модель.
-7. Вывод промежуточных результатов.
+* линейной: y(k+1) = a*y(k) + b*u(k)
+* нелинейной: y(k+1) = a*y(k) − b*y²(k) + c*u(k) + d*sin(u(k))
+
+Выводит на каждом шаге:
+
+* ошибку e
+* управляющее воздействие u
+* состояние объекта для линейной модели
+* состояние объекта для нелинейной модели
 
 
 < Начальная температура объекта
 
-< Коэффициент модели — сохранение предыдущего состояния
-
-< Коэффициент модели — влияние управляющего воздействия
+< Коэффициенты линейной модели
 
 < Целевая температура
 
 < Количество шагов моделирования
 
-< Усиление
+< Состояние линейной модели
 
-< Время интегрирования
-
-< Время дифференцирования
-
-< Шаг дискретизации
-
-< Экземпляр PID-регулятора
-
-< Текущее состояние объекта
+< Состояние нелинейной модели
 
 < Ошибка управления
 
 < Управляющее воздействие
-
-< Обновлённое состояние объекта
 
 
 
@@ -80,6 +70,7 @@ int main()
 
 
 #include <iostream>
+#include <cmath>
 #include "pid.h"
 #include "model.h"
 
@@ -87,13 +78,12 @@ using namespace std;
 
 int main() {
     double y0;  
-    double a;   
-    double b;   
+    double a, b; 
 
     cout << "Enter initial temperature y: ";
     cin >> y0;
 
-    cout << "Enter a and b for linear model: ";
+    cout << "Enter parameters a and b for linear model: ";
     cin >> a >> b;
 
     double w;  
@@ -105,24 +95,37 @@ int main() {
     cin >> steps;
 
     // Параметры PID-регулятора
-    double K  = 0.4;  
-    double T  = 3.0;  
-    double Td = 0.1;  
-    double T0 = 1.0;  
+    double K  = 0.4;
+    double T  = 3.0;
+    double Td = 0.1;
+    double T0 = 1.0;
 
-    PID pid(K, T, Td, T0);  
+    PID pid(K, T, Td, T0);
 
-    double y1 = y0; 
+    double y_lin = y0;   
+    double y_non = y0;   
+
+    // Коэффициенты нелинейной модели
+    double c = 0.2;
+    double d = 0.15;
+
+    cout << "\n=== Simulation started ===\n";
+    cout << "Step | e | u | y_linear | y_non_linear\n";
 
     for (int k = 0; k < steps; k++) {
-        double e = w - y;          
-        double u = pid.compute(e); 
-        y1 = linear(y, u, a, b);    
+        double e = w - y_lin;           
+        double u = pid.compute(e);      
+
+        // Модели
+        y_lin = linear(y_lin, u, a, b);
+        y_non = non_linear(y_non, u, a, b, c, d);
 
         cout << "Step " << k
              << "  e=" << e
              << "  u=" << u
-             << "  y=" << y1 << endl;
+             << "  y_lin=" << y_lin
+             << "  y_non=" << y_non
+             << endl;
     }
 
     return 0;
@@ -132,4 +135,4 @@ int main() {
 
 -------------------------------
 
-Updated on 2025-11-21 at 11:50:33 +0300
+Updated on 2025-11-26 at 11:50:51 +0300
