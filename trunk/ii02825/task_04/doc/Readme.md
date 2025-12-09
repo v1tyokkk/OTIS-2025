@@ -68,9 +68,9 @@ git config --system core.longpaths true
 powershell
 git clone -c core.longpaths=true -c core.autocrlf=true https://github.com/ostis-apps/nika
 cd nika
+git checkout 69858165c3b5fb26ca783950c74bfe7bddd64a00
 git submodule update --init --recursive
 # зафиксировать стабильную ревизию, совместимую с образами 0.1.0
-git checkout 69858165c3b5fb26ca783950c74bfe7bddd64a00
 ```
 
 ## Запуск
